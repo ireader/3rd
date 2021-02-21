@@ -1,0 +1,19 @@
+1. Downloads
+  a. download per5: https://www.activestate.com/products/perl/downloads/
+  b. fix :Can't locate Win32/Console.pm" -> http://euhat.com/wp/2020/01/03/you-may-need-to-install-the-win32console-module/
+  c. download nasm from https://www.nasm.us/
+  d. set windows env path -> C:\Users\Administrator\AppData\Local\bin\NASM
+
+2. Compile x64 library
+  a. x64 Native Tools Command Prompt for VS 2019
+  b. cd openssl dir
+  c. perl Configure VC-WIN64A
+  d. nmake clean
+  e. nmake
+
+3. Compile x32 library
+  a. Developer Command Prompt for VS 2019
+  b. cd openssl dir
+  c. perl Configure VC-WIN32
+  d. nmake clean
+  e. nmake
