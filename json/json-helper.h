@@ -157,7 +157,7 @@ public:
 
 public:
 	template <typename T>
-	jsonobject& add(const char* name, T value)
+	jsonarray& add(const char* name, T value)
 	{
 		++m_count;
 		if (m_json.length() > 0)
