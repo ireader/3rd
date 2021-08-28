@@ -1,0 +1,19 @@
+1. Install msys2
+  a. download msys2: https://www.msys2.org/
+  b. pacman -Syu
+  c. pacman -Su
+  d. pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+  e. pacman -S mingw-w64-i686-gcc
+  f. pacman -S msys/yasm
+
+2. Compile x64 library
+  a. MSYS2 MinGW 64-bit
+  b. cd x264 dir
+  c. ./configure --host=x86-64-w64-mingw32 --enable-static --enable-shared
+  d. make
+
+3. Compile x32 library
+  a. MSYS2 MinGW 32-bit
+  b. cd x264 dir
+  c. ./configure --host=i686-w64-mingw32 --enable-static --enable-shared
+  d. make

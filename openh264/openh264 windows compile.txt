@@ -1,0 +1,17 @@
+1. Install msys2
+  a. download msys2: https://www.msys2.org/
+  b. pacman -Syu
+  c. pacman -Su
+  d. pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+
+2. Compile x64 library
+  a. x64 Native Tools Command Prompt for VS 2019
+  b. cd to msys2(c:\msys2) dir, do: msys2_shell.cmd -msys2 -use-full-path
+  c. cd openh264 dir
+  d. make ARCH=x86_64 OS=msvc
+
+3. Compile x32 library
+  a. Developer Command Prompt for VS 2019
+  b. cd to msys2(c:\msys2) dir, do: msys2_shell.cmd -msys2 -use-full-path
+  c. cd openh264 dir
+  d. make ARCH=i386 OS=msvc
