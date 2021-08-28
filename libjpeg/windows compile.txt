@@ -1,0 +1,5 @@
+- http://ijg.org/
+- Open the Developer Command Prompt for VS 2019
+- cd jpeg-9d:  NMAKE /f makefile.vs setup-v16
+- Modify makefile.vs: #!include <win32.mak>
+- Open sln && build
