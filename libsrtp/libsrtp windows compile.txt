@@ -1,0 +1,5 @@
+1. Downloads
+  a. download cmake: https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-windows-x86_64.msi
+
+2. Compile win32/x64 library
+  a. cmake with check openssl (MUST for srtp_profile_aead_aes_256_gcm)
