@@ -81,6 +81,12 @@ public:
 		const json_value* json = find(xpath);
 		return json ? get(json, value) : false;
 	}
+	
+	bool get(const char* xpath, int64_t& value) const
+	{
+		const json_value* json = find(xpath);
+		return json ? get(json, value) : false;
+	}
 
 	bool get(const char* xpath, bool& value) const
 	{
@@ -141,6 +147,22 @@ public:
 		return true;
 	}
 
+	bool get(const json_value* json, int64_t& value) const
+	{
+		if (json->type == json_string)
+		{
+			value = strtoll(json->u.string.ptr, NULL, 10);
+		}
+		else
+		{
+			assert(json->type == json_integer);
+			if (json->type != json_integer)
+				return false;
+			value = json->u.integer;
+		}
+		return true;
+	}
+
 	bool get(const json_value* json, bool& value) const
 	{
 		if(json->type == json_string)
@@ -163,16 +185,22 @@ public:
 
 	bool get(const json_value* json, double& value) const
 	{
-		if(json->type == json_string)
+		if (json->type == json_string)
 		{
 			value = atof(json->u.string.ptr);
 		}
+		else if (json->type == json_double)
+		{
+			value = json->u.dbl;
+		}
+		else if (json->type == json_integer)
+		{
+			value = json->u.integer;
+		}
 		else
 		{
-			assert(json->type == json_double);
-			if(json->type != json_double)
-				return false;
-			value = json->u.dbl;
+			assert(0);
+			return false;
 		}
 		return true;
 	}
