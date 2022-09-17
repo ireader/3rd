@@ -1,0 +1,11 @@
+prefix=/d/work/3rd/libsdl
+exec_prefix=${prefix}/win64
+libdir=${exec_prefix}
+includedir=${prefix}/include
+
+Name: sdl2
+Description: SDL2 library
+Version: 2.24.0
+Libs: -L${libdir} -lsdl2
+Libs.private: 
+Cflags: -I${prefix}/include

@@ -195,7 +195,7 @@ public:
 		}
 		else if (json->type == json_integer)
 		{
-			value = json->u.integer;
+			value = (double)json->u.integer;
 		}
 		else
 		{
