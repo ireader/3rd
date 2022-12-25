@@ -112,6 +112,12 @@ public:
 		return get(xpath, v) ? v : defaultValue;
 	}
 
+	int64_t get2(const char* xpath, int64_t defaultValue) const
+	{
+		int64_t v = 0;
+		return get(xpath, v) ? v : defaultValue;
+	}
+
 	bool get2(const char* xpath, bool defaultValue) const
 	{
 		bool v = 0;
